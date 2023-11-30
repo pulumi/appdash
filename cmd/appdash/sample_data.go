@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
-	"sourcegraph.com/sourcegraph/appdash/sqltrace"
+	"github.com/pulumi/appdash"
+	"github.com/pulumi/appdash/sqltrace"
 )
 
 func init() {
@@ -18,7 +18,6 @@ func init() {
 // used is described at:
 //
 // http://stackoverflow.com/questions/22380890/generate-n-random-numbers-whose-sum-is-m-and-all-numbers-should-be-greater-than
-//
 func randomSplit(value, n int) []int {
 	var (
 		segments = make([]int, 0, n)

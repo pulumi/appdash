@@ -6,7 +6,7 @@ import (
 
 	basictracer "github.com/opentracing/basictracer-go"
 	opentracing "github.com/opentracing/opentracing-go"
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 var _ opentracing.Tracer = NewTracer(nil) // Compile time check.
@@ -55,16 +55,16 @@ func DefaultOptions() Options {
 //
 // For example:
 //
-//   collector := appdash.NewLocalCollector(myAppdashStore)
-//   chunkedCollector := appdash.NewChunkedCollector(collector)
+//	collector := appdash.NewLocalCollector(myAppdashStore)
+//	chunkedCollector := appdash.NewChunkedCollector(collector)
 //
-//   tracer := NewTracer(chunkedCollector)
+//	tracer := NewTracer(chunkedCollector)
 //
 // If writing traces to a remote Appdash collector, an appdash.RemoteCollector would
 // be needed, for example:
 //
-//   collector := appdash.NewRemoteCollector("localhost:8700")
-//   tracer := NewTracer(collector)
+//	collector := appdash.NewRemoteCollector("localhost:8700")
+//	tracer := NewTracer(collector)
 //
 // will record all spans to a collector server on localhost:8700.
 func NewTracer(c appdash.Collector) opentracing.Tracer {

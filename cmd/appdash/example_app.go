@@ -9,9 +9,9 @@ import (
 	"net/url"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
-	"sourcegraph.com/sourcegraph/appdash/httptrace"
-	"sourcegraph.com/sourcegraph/appdash/traceapp"
+	"github.com/pulumi/appdash"
+	"github.com/pulumi/appdash/httptrace"
+	"github.com/pulumi/appdash/traceapp"
 )
 
 func init() {

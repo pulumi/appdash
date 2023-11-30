@@ -3,4 +3,4 @@
 // This package needs to be go generated after making changes to template files.
 package tmpl
 
-//go:generate vfsgendev -source="sourcegraph.com/sourcegraph/appdash/traceapp/tmpl".Data
+//go:generate vfsgendev -source="github.com/pulumi/appdash/traceapp/tmpl".Data

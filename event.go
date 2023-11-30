@@ -104,11 +104,10 @@ func UnmarshalEvent(as Annotations, e Event) error {
 // work. Much like the image package, sometimes blank imports will be used for
 // packages that register Appdash events with this package:
 //
-//  import(
-//      _ "sourcegraph.com/sourcegraph/appdash/httptrace"
-//      _ "sourcegraph.com/sourcegraph/appdash/sqltrace"
-//  )
-//
+//	import(
+//	    _ "github.com/pulumi/appdash/httptrace"
+//	    _ "github.com/pulumi/appdash/sqltrace"
+//	)
 func RegisterEvent(e Event) {
 	if _, present := registeredEvents[e.Schema()]; present {
 		panic("event schema is already registered: " + e.Schema())

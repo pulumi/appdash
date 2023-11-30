@@ -15,7 +15,7 @@ import (
 	"sync"
 
 	basictracer "github.com/opentracing/basictracer-go"
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 // Recorder implements the basictracer.Recorder interface.

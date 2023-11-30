@@ -1,3 +1,4 @@
+//go:build dev
 // +build dev
 
 package tmpl
@@ -17,4 +18,4 @@ func importPathToDir(importPath string) string {
 }
 
 // Data is a virtual filesystem that contains template data used by Appdash.
-var Data = http.Dir(importPathToDir("sourcegraph.com/sourcegraph/appdash/traceapp/tmpl/data"))
+var Data = http.Dir(importPathToDir("github.com/pulumi/appdash/traceapp/tmpl/data"))

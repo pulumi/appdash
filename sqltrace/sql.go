@@ -4,7 +4,7 @@ package sqltrace
 import (
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 // SQLEvent is an SQL query event for use with appdash. It's primary function

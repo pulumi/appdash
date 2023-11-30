@@ -3,7 +3,7 @@ package traceapp
 import (
 	"fmt"
 
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 // aggItem represents a set of traces with the name (label) and their cumulative
@@ -23,10 +23,9 @@ const (
 
 // parseAggMode parses an aggregation mode:
 //
-//  "trace-only" -> traceOnly
-//  "span-only" -> spanOnly
-//  "trace-and-span" -> traceAndSpan
-//
+//	"trace-only" -> traceOnly
+//	"span-only" -> spanOnly
+//	"trace-and-span" -> traceAndSpan
 func parseAggMode(s string) aggMode {
 	switch s {
 	case "trace-only":

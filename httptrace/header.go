@@ -3,7 +3,7 @@ package httptrace
 import (
 	"net/http"
 
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 const (

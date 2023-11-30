@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 var (

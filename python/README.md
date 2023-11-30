@@ -36,11 +36,11 @@ Depending on where Python is installed and/or what permissions the directory has
 
 ## Installation
 
-To install Appdash into your Python path (i.e. so you can import it into your own code), simply change directory to `sourcegraph.com/sourcewgraph/appdash/python` and run the traditional `setup.py` script:
+To install Appdash into your Python path (i.e. so you can import it into your own code), simply change directory to `github.com/pulumi/appdash/python` and run the traditional `setup.py` script:
 
 ```
 # Install Python-appdash:
-cd $GOPATH/src/sourcegraph.com/sourcegraph/appdash/python
+cd $GOPATH/src/github.com/pulumi/appdash/python
 python setup.py install
 ```
 
@@ -50,14 +50,14 @@ To test that installation went well, in any directory _except that one_, you can
 
 ## Twisted Example
 
-If all is well with your setup, you should be able to change directory to `sourcegraph.com/sourcewgraph/appdash/python` and run the Twisted example:
+If all is well with your setup, you should be able to change directory to `github.com/pulumi/appdash/python` and run the Twisted example:
 
 ```
 # Run appdash server in separate terminal:
 appdash serve
 
 # Run the example script:
-cd $GOPATH/src/sourcegraph.com/sourcegraph/appdash/python
+cd $GOPATH/src/github.com/pulumi/appdash/python
 ./example_twisted.py
 ```
 
@@ -70,6 +70,6 @@ If you prefer not to use Twisted, you can utilize the standard socket collector 
 appdash serve
 
 # Run the example script:
-cd $GOPATH/src/sourcegraph.com/sourcegraph/appdash/python
+cd $GOPATH/src/github.com/pulumi/appdash/python
 ./example_socket.py
 ```

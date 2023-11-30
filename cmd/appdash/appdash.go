@@ -2,30 +2,30 @@
 //
 // For information about Appdash see:
 //
-// https://sourcegraph.com/sourcegraph/appdash
+// https://github.com/pulumi/appdash
 //
-// Demo mode
+// # Demo mode
 //
 // A demo of Appdash in a small web application can be ran by simply running:
 //
-//  appdash demo
+//	appdash demo
 //
 // Which will produce some output:
 //
-//  Appdash collector listening on tcp:46346
-//  Appdash web UI running at http://localhost:8700
+//	Appdash collector listening on tcp:46346
+//	Appdash web UI running at http://localhost:8700
 //
-//  Appdash demo app running at http://localhost:8699
+//	Appdash demo app running at http://localhost:8699
 //
 // Visiting the demo app URL mentioned above will then bring up the demo app
 // which will make a few fake API calls, and then give you a direct link to
 // view the trace for your request in Appdash's web UI.
 //
-// Serve mode
+// # Serve mode
 //
 // Basic usage consists of running:
 //
-//  appdash serve
+//	appdash serve
 //
 // Which will start a Appdash collector server running on TCP port 7701 in
 // plain-text (i.e. insecure). The Appdash collector server can then receive
@@ -35,19 +35,18 @@
 // The web UI is also ran on HTTP port 7700, which you could visit in a
 // browser:
 //
-//  http://localhost:7700
+//	http://localhost:7700
 //
 // Optionally, you do not need to use this command at all and can embed the web
 // UI into your application directly on a separate HTTP port (see the traceapp
 // package or examples/cmd/webapp for more details).
 //
-// Send mode
+// # Send mode
 //
 // For testing purposes, the appdash command can send some fake data to a
 // remote Appdash collector server by running:
 //
-//  appdash send -c="localhost:7701"
-//
+//	appdash send -c="localhost:7701"
 package main
 
 import (

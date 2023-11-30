@@ -12,7 +12,7 @@ import (
 	"time"
 
 	pio "github.com/gogo/protobuf/io"
-	"sourcegraph.com/sourcegraph/appdash/internal/wire"
+	"github.com/pulumi/appdash/internal/wire"
 )
 
 // maxMessageSize is the maximum buffer size for delimited protobuf messages.
@@ -63,19 +63,18 @@ var ErrQueueDropped = errors.New("ChunkedCollector queue entirely dropped (trace
 //
 // The flow of a ChunkedCollector is that:
 //
-//  - It receives a collection.
-//    - If the queue size exceeds MaxQueueSize in bytes, the pending queue is
-//      entirely dropped and ErrQueueDropped is returned.
-//    - Otherwise, if the queue would not exceed that size, the collection is
-//      added to the queue.
-//  - After MinInterval (or if Flush is called manually), all queued collections
-//    are passed off to the underlying collector. If the overall Flush time
-//    measured after each underlying Collect call exceeds FlushTimeout, the
-//    pending queue is entirely dropped and ErrQueueDropped is returned.
-//  - If the queue has been entirely dropped as a result of one of the above
-//    cases, entire traces and/or parts of their data will be missing. For this
-//    reason, you may specify a Log for debugging purposes.
-//
+//   - It receives a collection.
+//   - If the queue size exceeds MaxQueueSize in bytes, the pending queue is
+//     entirely dropped and ErrQueueDropped is returned.
+//   - Otherwise, if the queue would not exceed that size, the collection is
+//     added to the queue.
+//   - After MinInterval (or if Flush is called manually), all queued collections
+//     are passed off to the underlying collector. If the overall Flush time
+//     measured after each underlying Collect call exceeds FlushTimeout, the
+//     pending queue is entirely dropped and ErrQueueDropped is returned.
+//   - If the queue has been entirely dropped as a result of one of the above
+//     cases, entire traces and/or parts of their data will be missing. For this
+//     reason, you may specify a Log for debugging purposes.
 type ChunkedCollector struct {
 	// Collector is the underlying collector that spans are sent to.
 	Collector
@@ -131,14 +130,13 @@ type ChunkedCollector struct {
 
 // NewChunkedCollector is shorthand for:
 //
-// 	c := &ChunkedCollector{
-// 		Collector:    c,
-// 		MinInterval:  500 * time.Millisecond,
-// 		FlushTimeout: 2 * time.Second,
-// 		MaxQueueSize: 32 * 1024 * 1024, // 32 MB
-// 		Log:          log.New(os.Stderr, "appdash: ", log.LstdFlags),
-// 	}
-//
+//	c := &ChunkedCollector{
+//		Collector:    c,
+//		MinInterval:  500 * time.Millisecond,
+//		FlushTimeout: 2 * time.Second,
+//		MaxQueueSize: 32 * 1024 * 1024, // 32 MB
+//		Log:          log.New(os.Stderr, "appdash: ", log.LstdFlags),
+//	}
 func NewChunkedCollector(c Collector) *ChunkedCollector {
 	return &ChunkedCollector{
 		Collector:    c,

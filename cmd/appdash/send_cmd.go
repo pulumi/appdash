@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"sourcegraph.com/sourcegraph/appdash"
+	"github.com/pulumi/appdash"
 )
 
 func init() {
